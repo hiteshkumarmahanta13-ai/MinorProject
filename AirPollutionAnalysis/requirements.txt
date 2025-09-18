@@ -1,7 +1,8 @@
-steamlit
+streamlit
 pandas
 numpy
 plotly
 seaborn
 matplotlib
+
 pydeck
