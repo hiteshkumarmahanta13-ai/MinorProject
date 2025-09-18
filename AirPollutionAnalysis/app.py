@@ -5,6 +5,11 @@ import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pydeck as pdk
+import os
+
+DATA_PATH1 = os.path.join(os.path.dirname(__file__), "data", "bbsr_air24.csv")
+DATA_PATH2 = os.path.join(os.path.dirname(__file__), "data", "delhi_mly.csv")
+
 
 # ==============================
 # Page Config
@@ -20,8 +25,8 @@ st.set_page_config(layout="wide")
 # ==============================
 @st.cache_data
 def load_data():
-    bbsr_df = pd.read_csv("data/bbsr_air24.csv")
-    delhi_df = pd.read_csv("data/delhi_mly.csv")
+    bbsr_df = pd.read_csv(DATA_PATH1)
+    delhi_df = pd.read_csv(DATA_PATH2)
 
     # Detect datetime if available
     for df in [bbsr_df, delhi_df]:
@@ -211,3 +216,4 @@ with col2:
     else:
 
         st.info("Select pollutants to check for alerts.")
+
