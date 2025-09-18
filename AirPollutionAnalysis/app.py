@@ -20,8 +20,8 @@ st.set_page_config(layout="wide")
 # ==============================
 @st.cache_data
 def load_data():
-    bbsr_df = pd.read_csv("bbsr_air24.csv")
-    delhi_df = pd.read_csv("delhi_mly.csv")
+    bbsr_df = pd.read_csv("data/bbsr_air24.csv")
+    delhi_df = pd.read_csv("data/delhi_mly.csv")
 
     # Detect datetime if available
     for df in [bbsr_df, delhi_df]:
@@ -209,4 +209,5 @@ with col2:
         else:
             st.success("No alerts found.")
     else:
+
         st.info("Select pollutants to check for alerts.")
